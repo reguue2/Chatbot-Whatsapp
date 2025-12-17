@@ -71,4 +71,4 @@ Este proyecto actualmente no tiene una licencia específica asignada. Por favor,
 
 ---
 
-Desarrollado con ❤️ por [reguue2](https://github.com/reguue2).
+Desarrollado por [reguue2](https://github.com/reguue2).
