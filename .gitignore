@@ -1,0 +1,83 @@
+# ======================
+# Python
+# ======================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.log
+
+# ======================
+# Entornos virtuales
+# ======================
+.venv/
+venv/
+env/
+
+# ======================
+# Variables de entorno
+# ======================
+.env
+.env.*
+!.env.example
+
+# ======================
+# Credenciales y secretos
+# ======================
+credentials/
+tokens/
+secrets/
+*.key
+*.pem
+*.crt
+TOKENS_WABA/
+TOKEN_WABA*
+stripe_backup*
+
+# ========================
+# CREDENCIALES CLOUD (CRITICO)
+# ========================
+credentials.json
+*credentials*.json
+
+# ======================
+# Bases de datos locales
+# ======================
+*.sqlite
+*.sqlite3
+*.db
+
+# ======================
+# Docker
+# ======================
+docker-data/
+docker-volumes/
+
+# ======================
+# IDEs / SO
+# ======================
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+
+# ======================
+# Tests y coverage
+# ======================
+.coverage
+htmlcov/
+.pytest_cache/
+
+# ======================
+# Logs
+# ======================
+logs/
+*.log
+
+# ======================
+# Build / dist
+# ======================
+build/
+dist/
+*.egg-info/
