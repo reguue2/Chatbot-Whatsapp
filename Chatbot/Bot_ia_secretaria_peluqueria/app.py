@@ -955,9 +955,11 @@ def _wa_normalize_session_id(session_id: Optional[str], to: str) -> str:
     if sid:
         return sid
     to_str = str(to or "").strip()
-    if to_str.startswith("wa_"):
-        return to_str
-    return f"wa_{to_str}" if to_str else "wa_unknown"
+    if to_str:
+        return f"wa_UNKNOWN_{to_str}"
+
+    return "wa_UNKNOWN"
+
 
 
 def _wa_idempotency_key(session_id: str, payload: dict) -> str:
@@ -1750,7 +1752,7 @@ def whatsapp_receive():
 
             for msg in messages:
                 ts = _msg_ts(msg)
-                if not should_process_by_ts(session_id=f"wa_{msg.get('from')}", ts=ts):
+                if not should_process_by_ts(session_id=f"wa_{phone_number_id}_{msg.get('from')}",ts=ts):
                     continue
 
                 from_msisdn = msg.get("from")
@@ -1786,7 +1788,7 @@ def whatsapp_receive():
                 elif msg_type == "button":
                     origin = "button"
 
-                session_id = f"wa_{from_msisdn}"
+                session_id = f"wa_{phone_number_id}_{from_msisdn}"
 
                 if list_id and list_id.startswith("RID_NEXT_"):
                     try:
